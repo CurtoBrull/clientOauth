@@ -21,7 +21,8 @@ public class AppController {
 
     @PostMapping("/createMessage")
     public Message createMessage(@RequestBody Message message) {
-        return new Message("Message created: " + message.getMessageText());
+        System.out.println("Message created: " + message.getMessageText());
+        return message;
     }
 
     @GetMapping("/authorized")
