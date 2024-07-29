@@ -3,20 +3,20 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: "http://127.0.0.1:9000"
+          issuer-uri: "http://127.0.0.1:9001"
       client:
         registration:
-          app-client:
+          client-oauth:
             provider: spring
-            client-id: app-client
+            client-id: client-oauth
             client-secret: secret
             authorization-grant-type: authorization_code
-            redirect-uri: "http://127.0.0.1:8080/login/authorized"
+            redirect-uri: "http://127.0.0.1:8080/authorized"
             scope:
               - openid
               - profile
               - read
-            client-name: app-client
+            client-name: client-oauth
         provider:
           spring:
-            issuer-uri: "http://127.0.0.1:9000"
+            issuer-uri: "http://127.0.0.1:9001"
