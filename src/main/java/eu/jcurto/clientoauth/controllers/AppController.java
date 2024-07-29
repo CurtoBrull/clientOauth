@@ -16,10 +16,7 @@ public class AppController {
 
     @GetMapping("/messages")
     public List<Message> messageList() {
-        return List.of(
-                new Message("Hello, World!"),
-                new Message("Goodbye, World!")
-        );
+        return Collections.singletonList(new Message("Hello, World!"));
     }
 
     @PostMapping("/createMessage")
@@ -27,7 +24,8 @@ public class AppController {
         return new Message("Message created: " + message.getMessageText());
     }
 
-    public Map<String, String> auth(@RequestParam String code) {
+    @GetMapping("/authorized")
+    public Map<String, String> authorized(@RequestParam String code) {
         return Collections.singletonMap("code", code);
     }
 
